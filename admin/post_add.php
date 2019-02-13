@@ -17,9 +17,8 @@
         <form action="./post_add_handle.php" method="POST">
           <input name="post_title" type="text" placeholder="Post Title" required>
           <textarea name="post_content" rows="10" placeholder="Post Content" required></textarea>
-          <div>category : <select name='category_id'>
+          <div class="select">category : <select name='category_id'>
           <?php 
-          var_dump($results);
             foreach($results as $result){
               //將查詢出的資料輸出
               $categoryId = $result['ID'];
@@ -29,7 +28,7 @@
             }
           ?>
           </select></div>
-          <div>Post status:
+          <div class="select">Post status:
             <select name='post_status'>
               <option selected="selected" value="publish">Publish</option>
               <option value="draft">Draft</option>

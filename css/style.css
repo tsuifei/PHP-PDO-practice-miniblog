@@ -1,9 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,500,700,800);
 
 :root {
-  --main-bg-color: rgb(246, 197, 85);
-  --main-link-color: rgb(243, 241, 118);
-  --text-color: rgb(65, 63, 63);
+  /* 淺色底與文字 */
+  --main-bg-color: rgb(252, 251, 250); 
+  --main-text-color: rgb(65, 63, 63);
+  --main-link-hover: rgb(246, 197, 85);
+  
+  /* 深色底與文字 */
+  --second-bg-color: rgb(246, 197, 85);
+  --second-text-color: rgb(65, 63, 63);
+  --second-link-hover: rgb(207, 197, 140);
+  /* --text-color: rgb(65, 63, 63); */
 }
 
 * {
@@ -19,7 +26,8 @@ body {
   font-family: 'Open Sans';
   padding: 0;
   margin: 0;
-  background-color: var(--main-bg-color);
+  background-color: var(--second-bg-color);
+  color: var(--main-text-color);
 }
 
 img {
@@ -29,18 +37,18 @@ img {
 
 a:link, a:visited {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--main-text-color);
   font-weight: 500;
 }
 
 a:hover,
 a:active {
-  color: var(--main-link-color);
-  font-weight: 700;
+  color: var(--main-link-hover);
+  /* font-weight: 700; */
 }
 
 header {
-  background-color: var(--main-bg-color);
+  background-color: var(--second-bg-color);
   margin: 0 auto;
   position: fixed;
   z-index: 1000;
@@ -51,13 +59,18 @@ header {
   text-align: center;
 }
 
-.site-name {
-  font-size: 1.9em;
-  color:#fff;
+.site-name,
+.site-name a,
+.site-name a:hover {
+  font-size: 1.5em;
+  color:var(--main-text-color);
   display: inline-block;
   margin-top: 15px;
 }
 
+#nav{
+  margin-top: 15px;
+}
 #nav a {
   color: #fff;
 }
@@ -78,11 +91,13 @@ header {
   padding: 8px 10PX;
   display: inline-block;
   border-radius: 5px;
-  /* background-color: rgb(174, 218, 175); */
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.24),
   0 0px 5px 0 rgba(0, 0, 0, 0.24);
 }
-
+.select{
+  display: inline-block;
+  padding-right: 20px;
+}
 .posts{
   margin-top: 100px;
 }
@@ -114,8 +129,13 @@ margin-top: 20px;
 
 .post__foot {
   position: absolute;
-  right: 50px;
-  bottom: 30px;
+  right: 25px;
+  bottom: 25px;
+}
+.category__foot {
+  position: absolute;
+  right: 15px;
+  bottom: 12px;
 }
 
 .post__foot a:hover {
@@ -145,10 +165,11 @@ form input[type="submit"]{
   font-family: "Overpass", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: var(--main-bg-color);
+  background: var(--second-bg-color);
   width: 100%;
   border: 0;
   padding: 15px;
+  margin-top: 20px;
   color: #FFFFFF;
   font-size: 1em;
   -webkit-transition: all 0.3 ease;
@@ -158,9 +179,11 @@ form input[type="submit"]{
 
 /* footer */
 footer, footer a {
+  margin-top: 10px;
   text-align: center;
   color: #fff;
   font-size: 0.8em;
+  
 }
 
 @media only screen and (max-width: 600px) {

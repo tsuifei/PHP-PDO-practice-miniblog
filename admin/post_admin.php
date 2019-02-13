@@ -11,7 +11,7 @@
       // mysql 取資料顯示 以降序顯示
       // $sql = "SELECT * FROM posts ORDER BY created_at DESC"; 
 
-      $sql = "SELECT P.ID, P.post_title, P.post_content, P.post_status, C.category_name, P.created_at FROM posts AS P LEFT JOIN categories AS C ON P.category_id = C.ID"; 
+      $sql = "SELECT P.ID, P.post_title, P.post_content, P.post_status, C.category_name, P.created_at FROM posts AS P LEFT JOIN categories AS C ON P.category_id = C.ID ORDER BY created_at DESC"; 
 
       // $sql = "SELECT P.post_title, P.post_content, P.post_status, C.category_name, P.created_at FROM posts AS P LEFT JOIN categories AS C ON P.category_id = C.ID WHERE P.ID =" . $ID; 
 

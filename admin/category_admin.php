@@ -19,7 +19,7 @@
         //將查詢出的資料輸出
         echo "<div class='post'>";
         echo "<p class=''>" . $result['category_name']."</p>";
-        echo "<div class='post__foot'>";
+        echo "<div class='category__foot'>";
         echo  "<a href='./category_update.php?id=".$result['ID']."' class='bnt'>Update  </a>";
         echo  "<a href='./category_delete.php?id=".$result['ID']."' class='bnt'>Delete</a>";
         echo "</div>";
