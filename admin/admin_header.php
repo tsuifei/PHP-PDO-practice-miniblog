@@ -8,13 +8,19 @@
       <link rel="icon" type="image/png" href="../imgs/favicon.png" />
     <title>Petit Blog</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script> -->
 </head>
 <body>
   <div class="container">
     <header>
     <h1 class="site-name">/* Petit Blog Admin */</h1>
-    <nav id="nav">
-      <ul>
+
+    <nav class="mobile-menu">
+      <label for="show-menu" class="show-menu"><span>Menu</span>
+    <div class="lines"></div>
+  </label>
+  <input type="checkbox" id="show-menu">
+      <ul id="menu">
         <li><a href="../index.php">Home</a></li>
         <li><a href="./post_admin.php">Post admin</a></li>
         <li><a href="./post_add.php">Post add</a></li>
@@ -22,4 +28,20 @@
         <li><a href="./category_add.php">Category add</a></li>
       </ul>
     </nav>
+
+    <!-- <nav class="mobile-menu">
+  <label for="show-menu" class="show-menu"><span>Menu</span>
+    <div class="lines"></div>
+  </label>
+  <input type="checkbox" id="show-menu">
+  <ul id="menu">
+    <li><a href="#">Home</a></li>
+    <li> <a href="#">About</a> </li>
+    <li> <a href="#">Portfolio</a> </li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav> -->
+
+
 </header>
