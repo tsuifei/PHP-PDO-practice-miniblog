@@ -1,9 +1,9 @@
 <?php
-  require_once('../conn.php');
+  require_once('../../conn42.php');
   require_once('./admin_header.php');
 
 // mysql 取資料顯示 以降序顯示
-      $sql = "SELECT * FROM categories ORDER BY created_at DESC"; 
+      $sql = "SELECT * FROM blog_categories ORDER BY created_at DESC"; 
       $results = [];
       $select = $db->prepare($sql); 
       // $select -> execute();

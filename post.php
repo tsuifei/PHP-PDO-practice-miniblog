@@ -1,5 +1,5 @@
 <?php
-  require_once('./conn.php');
+  require_once('../conn42.php');
   require_once('./int/header.php');
   ?>
 
@@ -9,7 +9,7 @@
       // mysql 取資料顯示 以降序顯示
       // $sql = "SELECT * FROM posts WHERE ID =" . $ID; 
       // $sql = "SELECT * FROM posts LEFT JOIN categories ON posts.category_id = categories.ID WHERE posts.ID =" . $ID; 
-      $sql = "SELECT P.post_title, P.post_content, P.post_status, C.category_name, P.created_at FROM posts AS P LEFT JOIN categories AS C ON P.category_id = C.ID WHERE P.ID =" . $ID; 
+      $sql = "SELECT P.post_title, P.post_content, P.post_status, C.category_name, P.created_at FROM blog_posts AS P LEFT JOIN blog_categories AS C ON P.category_id = C.ID WHERE P.ID =" . $ID; 
       // $result = [];
       $select = $db->prepare($sql); 
       $select -> execute([]);

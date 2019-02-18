@@ -1,20 +1,18 @@
 <?php
-  require_once('../conn.php');
+  require_once('../../conn42.php');
   require_once('./admin_header.php');
   $ID = $_GET['id'];
 
   // 抓 posts 內容
-  $sql = "SELECT * FROM posts  WHERE ID=" . $ID;
-  // $sql = "SELECT * FROM posts AS P LEFT JOIN categories AS C ON P.category_id = C.ID WHERE P.ID =" . $ID; 
+  $sql = "SELECT * FROM blog_posts  WHERE ID=" . $ID;
   $result = $db->prepare($sql);
   $result -> execute([$ID]);
   $row = $result->fetch(PDO::FETCH_ASSOC); //取出結果
 
   // 抓 categories 內容
-  $sql_category = "SELECT * FROM categories ORDER BY created_at DESC";
+  $sql_category = "SELECT * FROM blog_categories ORDER BY created_at DESC";
   $result_cat = $db->prepare($sql_category);
   $result_cat -> execute(array($ID));
-  // $rowCat = $result_cat->fetch(PDO::FETCH_ASSOC); //取出結果
 
   ?>
     <div class="posts">
@@ -36,12 +34,7 @@
           <div>Post status:<select elect name='post_status'>
             <?php 
               // 抓原本form裡的值
-              // $select_value=$_POST['post_status'];
-              // 抓原本資料庫post_status這欄的值
               $status = $row ['post_status'];
-              var_dump($status);
-              // 如果 兩個ㄧ樣，就把selected’屬性放進去這樣就會顯示正確的
-              // $is_checked = $_POST['post_status'] === '$status' ? 'selected' : '';
               var_dump($is_checked);
               if($status === 'publish' ){
                 echo "<option value='$status' selected>$status</option>";
@@ -51,11 +44,11 @@
                 echo "<option value='publish'>publish</option>";
               }
             ?>
-            <!-- <option value="draft">Draft</option> --> 
            </select>
          </div> 
 
-          <input type="hidden" name="id" value="<?php echo $row['ID']?>"><!-- 把ID藏在這裡待過去update handle -->
+          <input type="hidden" name="id" value="<?php echo $row['ID']?>">
+          <!-- 把ID藏在這裡待過去update handle -->
           <input type="submit" value="Update">
         </form>
       </div>

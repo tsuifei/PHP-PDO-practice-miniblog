@@ -1,5 +1,5 @@
 <?php
-  require_once('../conn.php');
+ require_once('../../conn42.php');
   require_once('./admin_header.php');
   ?>
     <div class="posts">

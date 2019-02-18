@@ -99,14 +99,14 @@ header {
 /* Style for menu links*/
 .mobile-menu li a {
   display: block;
-  min-width: 140px;
+  /* min-width: 140px; */
   text-align: center;
   color: #fff;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   /* background: #8aa8bd; */
   text-decoration: none;
-  margin-left: -5px;
-  padding: 10px 0;
+  /* margin-left: -5px; */
+  padding: 10px;
   -webkit-transition: all 0.4s ease 0s;
   -moz-transition: all 0.4s ease 0s;
   -ms-transition: all 0.4s ease 0s;
@@ -190,11 +190,12 @@ header {
   display: inline-block;
   padding-right: 20px;
 }
-.posts{
+.posts, .pages{
   margin-top: 100px;
 }
 
-.post {
+.post,
+.page {
   margin: 0px auto;
   width: 600px;
   padding: 20px 35px;
@@ -268,6 +269,11 @@ form input[type="submit"]{
   transition: all 0.3 ease;
   cursor: pointer;
 }
+.borad__comment-author,
+.borad__comment-timestamp {
+  width: 48%;
+  display: inline-block;
+}
 
 /* footer */
 footer, footer a {
@@ -282,37 +288,38 @@ footer, footer a {
   body {
     background-color: var(--main-bg-color);
   }
-    .mobile-menu .lines {
-border-bottom: 15px double #f8f8f8;
-border-top: 5px solid #f8f8f8;
-content: "";
-height: 5px;
-width: 30px;
-padding: 3px 20px;
-float: right;
-    }
+  .mobile-menu .lines {
+    border-bottom: 15px double #f8f8f8;
+    border-top: 5px solid #f8f8f8;
+    content: "";
+    height: 5px;
+    width: 30px;
+    padding: 3px 20px;
+    float: right;
+  }
 
-    /*Make dropdown links appear inline*/
-    .mobile-menu ul {
-      position: static;
-      display: none;
-    }
+  /*Make dropdown links appear inline*/
+  .mobile-menu ul {
+    position: static;
+    display: none;
+  }
 
-    /*Create vertical spacing*/
-    .mobile-menu li {
-      margin-bottom: 1px;
-    }
+  /*Create vertical spacing*/
+  .mobile-menu li {
+    margin-bottom: 1px;
+  }
 
-    /*Make all menu links full width*/
-    .mobile-menu ul li,
-    .mobile-menu li a {
+  /*Make all menu links full width*/
+  .mobile-menu ul li,
+  .mobile-menu li a {
       width: 100%;
-    }
+  }
 
-    /*Display 'show menu' link*/
-    .mobile-menu .show-menu {
-      display: block;
-    }
+  /*Display 'show menu' link*/
+  .mobile-menu .show-menu {
+    display: block;
+  }
+
   .post {
     margin: 0px auto;
     width: 95%;

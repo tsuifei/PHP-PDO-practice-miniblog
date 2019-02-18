@@ -1,7 +1,7 @@
 <?php
-  require_once('../conn.php');
+  require_once('../../conn42.php');
   
-  $category = $_POST['category'];
+  $category = htmlspecialchars($_POST['category'],ENT_QUOTES);
 
   // 確認是否填入資料為空
   if (empty($category)) { 
@@ -9,7 +9,7 @@
     // die('');
   } else { 
     // 新增資料
-    $sql = "INSERT INTO categories(category_name) values(?)";
+    $sql = "INSERT INTO blog_categories(category_name) values(?)";
     $add = $db->prepare($sql);
     $result = $add->execute([$category]);
 

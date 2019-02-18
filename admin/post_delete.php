@@ -1,10 +1,10 @@
 <?php
-require_once('../conn.php');
+require_once('../../conn42.php');
 
 $id = $_GET['id'];
 
 // 刪除資料
-$sql = "DELETE FROM posts WHERE ID = " .$id;
+$sql = "DELETE FROM blog_posts WHERE ID = " .$id;
 $delete = $db->prepare($sql);
 $delete->execute([$id]);
 if($delete){ 

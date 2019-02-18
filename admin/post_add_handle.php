@@ -1,10 +1,10 @@
 <?php
-  require_once('../conn.php');
+  require_once('../../conn42.php');
   
-  $postTitle = $_POST['post_title'];
-  $postName = $_POST['post_content'];
-  $postStatus = $_POST['post_status'];
-  $postCategoryId = $_POST['category_id'];
+  $postTitle = htmlspecialchars($_POST['post_title'],ENT_QUOTES);
+  $postName = htmlspecialchars($_POST['post_content'],ENT_QUOTES);
+  $postStatus = htmlspecialchars($_POST['post_status'],ENT_QUOTES);
+  $postCategoryId = htmlspecialchars($_POST['category_id'],ENT_QUOTES);
 
   // 確認是否填入資料為空
   if (empty($postTitle) || empty($postName) || empty($postCategoryId) || empty($postStatus)) { 
@@ -14,7 +14,7 @@
   } 
 
     // 新增資料
-  $sql = "INSERT INTO posts(post_title, post_content, post_status, category_id) values(?,?,?,?)";
+  $sql = "INSERT INTO blog_posts(post_title, post_content, post_status, category_id) values(?,?,?,?)";
   $insert = $db->prepare($sql);
   $result = $insert->execute([$postTitle, $postName, $postStatus, $postCategoryId]);
 
