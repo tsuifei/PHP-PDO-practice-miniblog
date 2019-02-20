@@ -217,7 +217,14 @@ margin-top: 20px;
 .post__title {
   font-size: 1.3em;
   text-transform:uppercase;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  font-weight: 500;
+}
+
+.post__status,
+.post__category,
+.post__date {
+  color: #867a07;
 }
 
 .post__foot {

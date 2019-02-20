@@ -30,8 +30,8 @@
         echo "<p class='post__content'>" . $post_content ."</p>";
         // echo "<p class='post__content'>" . $row['post_content']."</p>";
         echo "<p class='post__status'>Status : " . escapeOut($row['post_status']) . "</p>";
-        echo "<p class=''> Category : " . escapeOut($row['category_name']) ."</p>";
-        echo "<p class=''>" . escapeOut($row['created_at']) ."</p>";
+        echo "<p class='post__category'> Category : " . escapeOut($row['category_name']) ."</p>";
+        echo "<p class='post__date'>" . escapeOut($row['created_at']) ."</p>";
         echo "</div>";
 
 

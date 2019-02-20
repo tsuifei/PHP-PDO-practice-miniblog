@@ -32,11 +32,11 @@
 
         //將查詢出的資料輸出
         echo "<div class='post'>";
-          echo "<p class=''>" . escapeOut($row['post_title'])."</p>";
+          echo "<h2 class='post__title'>" . escapeOut($row['post_title'])."</h2>";
           echo "<p class=''>" . $post_content ."</p>";
-          echo "<p class=''>" . escapeOut($row['category_name'])."</p>";
-          echo "<p class=''>" . escapeOut($row['post_status'])."</p>";
-          echo "<p class=''>" . escapeOut($row['created_at'])."</p>";
+          echo "<p class='post__category'>" . escapeOut($row['category_name'])."</p>";
+          echo "<p class='post__status'>" . escapeOut($row['post_status'])."</p>";
+          echo "<p class='post__date'>" . escapeOut($row['created_at'])."</p>";
           echo "<div class='post__foot'>";
             echo  "<a href='./post_update.php?id=". escapeOut($row['ID']) ."' class='bnt'>Update  </a>";
             echo  "<a href='./post_delete.php?id=". escapeOut($row['ID']) ."' class='bnt'>Delete</a>";

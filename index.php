@@ -16,8 +16,7 @@
         $ID = $result['ID'];
         echo "<div class='post'>";
         echo "<h2 class='post__title'> <a href='./post.php?id=$ID'>" .$result['post_title']. "</a> </h2>";
-        echo "<p class=''>" .$result['created_at'] ."</p>";
-      
+        echo "<p class='post__date'>" .$result['created_at'] ."</p>";
         echo "</div>";
       }
       ?>

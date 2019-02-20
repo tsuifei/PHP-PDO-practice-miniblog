@@ -21,28 +21,28 @@
         <form action="./post_update_handle.php" method="POST">
           <input name="post_title" type="text" value="<?php echo escapeOut($row['post_title']); ?>" >
           <textarea name="post_content" rows="10" required><?php echo escapeOut($row['post_content']); ?></textarea>
-          <div>category : <select name='category_id'>
+          <div class='post__category'>category : <select name='category_id'>
           <?php 
             while($rowCat = $result_cat->fetch(PDO::FETCH_ASSOC)){
               //將分類的資料輸出
               $catId = $rowCat['ID'];
               $catName = $rowCat['category_name'];
               $is_checked = $row['category_id'] === $catId ? 'selected' : '';
-              echo "<option value='$catId' $is_checked>$catName</option>";
+              echo "<option class='post__category' value='$catId' $is_checked>$catName</option>";
             }
           ?>
           </select></div>
-          <div>Post status:<select name='post_status'>
+          <div class='post__status'>Post status:<select name='post_status'>
             <?php 
               // 抓原本form裡的值
               $status = $row ['post_status'];
               // var_dump($is_checked);
               if($status === 'publish' ){
-                echo "<option value='$status' selected>$status</option>";
-                echo "<option value='draft'>Draft</option>";
+                echo "<option class='post__status' value='$status' selected>$status</option>";
+                echo "<option class='post__status' value='draft'>Draft</option>";
               } else {
-                echo "<option value='$status' selected>$status</option>";
-                echo "<option value='publish'>publish</option>";
+                echo "<option class='post__status' value='$status' selected>$status</option>";
+                echo "<option class='post__status' value='publish'>publish</option>";
               }
             ?>
            </select>
