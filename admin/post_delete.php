@@ -1,7 +1,8 @@
 <?php
 require_once('../../conn42.php');
+require_once('../utils/utils.php');
 
-$id = $_GET['id'];
+$id = escapeIn($_GET['id']);
 
 // 刪除資料
 $sql = "DELETE FROM blog_posts WHERE ID = " .$id;

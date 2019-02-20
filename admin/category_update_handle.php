@@ -9,7 +9,7 @@
     die('il faut tout remplier');
   } else { 
     // 更新資料
-    $sql = "UPDATE categories SET blog_category_name='$categoryName' WHERE ID = " . $id;
+    $sql = "UPDATE blog_categories SET category_name='$categoryName' WHERE ID = " . $id;
     $update = $db->prepare($sql);
     $result = $update->execute([$categoryName]);
 

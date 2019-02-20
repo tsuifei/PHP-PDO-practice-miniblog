@@ -1,6 +1,8 @@
 <?php
   require_once('../../conn42.php');
   require_once('./admin_header.php');
+  require_once('../utils/Parsedown.php');
+  require_once('../utils/utils.php');
 
 // mysql 取資料顯示 以降序顯示
       $sql = "SELECT * FROM blog_categories ORDER BY created_at DESC"; 

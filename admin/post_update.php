@@ -1,7 +1,8 @@
 <?php
   require_once('../../conn42.php');
   require_once('./admin_header.php');
-  $ID = $_GET['id'];
+  require_once('../utils/utils.php');
+  $ID = escapeIn($_GET['id']);
 
   // 抓 posts 內容
   $sql = "SELECT * FROM blog_posts  WHERE ID=" . $ID;
@@ -18,8 +19,8 @@
     <div class="posts">
       <div class="post">
         <form action="./post_update_handle.php" method="POST">
-          <input name="post_title" type="text" value="<?php echo $row['post_title']?>" >
-          <textarea name="post_content" rows="10" required><?php echo $row['post_content']?></textarea>
+          <input name="post_title" type="text" value="<?php echo escapeOut($row['post_title']); ?>" >
+          <textarea name="post_content" rows="10" required><?php echo escapeOut($row['post_content']); ?></textarea>
           <div>category : <select name='category_id'>
           <?php 
             while($rowCat = $result_cat->fetch(PDO::FETCH_ASSOC)){
@@ -31,11 +32,11 @@
             }
           ?>
           </select></div>
-          <div>Post status:<select elect name='post_status'>
+          <div>Post status:<select name='post_status'>
             <?php 
               // 抓原本form裡的值
               $status = $row ['post_status'];
-              var_dump($is_checked);
+              // var_dump($is_checked);
               if($status === 'publish' ){
                 echo "<option value='$status' selected>$status</option>";
                 echo "<option value='draft'>Draft</option>";
@@ -47,7 +48,7 @@
            </select>
          </div> 
 
-          <input type="hidden" name="id" value="<?php echo $row['ID']?>">
+          <input type="hidden" name="id" value="<?php echo escapeIn($row['ID']) ?>">
           <!-- 把ID藏在這裡待過去update handle -->
           <input type="submit" value="Update">
         </form>

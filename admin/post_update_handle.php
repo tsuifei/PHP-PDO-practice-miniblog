@@ -1,11 +1,12 @@
 <?php
   require_once('../../conn42.php');
+  require_once('../utils/utils.php');
   
-  $postId = htmlspecialchars($_POST['id'],ENT_QUOTES);
-  $postTitle = htmlspecialchars($_POST['post_title'],ENT_QUOTES);
-  $postContent = htmlspecialchars($_POST['post_content'],ENT_QUOTES);
-  $postStatus = htmlspecialchars($_POST['post_status'],ENT_QUOTES);
-  $postCategoryId = htmlspecialchars($_POST['category_id'],ENT_QUOTES);
+  $postId = $_POST['id'];
+  $postTitle = $_POST['post_title'];
+  $postContent = $_POST['post_content'];
+  $postStatus = $_POST['post_status'];
+  $postCategoryId = $_POST['category_id'];
 
   // 確認是否填入資料為空
   if (empty($postTitle) || empty($postContent) || empty($postCategoryId) || empty($postStatus)) { 
@@ -15,7 +16,7 @@
   } 
 
     // 更新資料
-    $sql = "UPDATE blog_posts SET post_title='$postTitle', post_content = '$postContent',post_status='$postStatus',category_id = '$postCategoryId' WHERE ID = " .$postId;
+    $sql = "UPDATE blog_posts SET post_title='$postTitle', post_content = '$postContent',post_status='$postStatus', category_id = '$postCategoryId' WHERE ID = " .$postId;
     $update = $db->prepare($sql);
     $result = $update->execute(['$postTitle', '$postContent', '$postCategoryId','$postStatus']);
 
