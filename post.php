@@ -19,19 +19,19 @@
       // foreach($results as $result){
 
       // 撈出內容轉成吃 Markdown 格式
-      $post_content = escapeOut($row['post_content']);
+      $post_content = $row['post_content'];
       $md = new Parsedown();
       $md->setSafeMode(true); 
       $post_content = $md->text($post_content); // 把內文轉成 markdown 格式
 
         //將查詢出的資料輸出
         echo "<div class='post'>";
-        echo "<h2 class='post__title'>" . escapeOut($row['post_title']). "</h2>";
+        echo "<h2 class='post__title'>" . $row['post_title']. "</h2>";
         echo "<p class='post__content'>" . $post_content ."</p>";
         // echo "<p class='post__content'>" . $row['post_content']."</p>";
-        echo "<p class='post__status'>Status : " . escapeOut($row['post_status']) . "</p>";
-        echo "<p class='post__category'> Category : " . escapeOut($row['category_name']) ."</p>";
-        echo "<p class='post__date'>" . escapeOut($row['created_at']) ."</p>";
+        echo "<p class='post__status'>Status : " . $row['post_status'] . "</p>";
+        echo "<p class='post__category'> Category : " . $row['category_name'] ."</p>";
+        echo "<p class='post__date'>" . $row['created_at'] ."</p>";
         echo "</div>";
 
 

@@ -19,15 +19,15 @@
     <div class="posts">
       <div class="post">
         <form action="./post_update_handle.php" method="POST">
-          <input name="post_title" type="text" value="<?php echo escapeOut($row['post_title']); ?>" >
-          <textarea name="post_content" rows="10" required><?php echo escapeOut($row['post_content']); ?></textarea>
+          <input name="post_title" type="text" value="<?php echo escapeIn($row['post_title']); ?>" >
+          <textarea name="post_content" rows="10" required><?php echo escapeIn($row['post_content']); ?></textarea>
           <div class='post__category'>category : <select name='category_id'>
           <?php 
             while($rowCat = $result_cat->fetch(PDO::FETCH_ASSOC)){
               //將分類的資料輸出
-              $catId = $rowCat['ID'];
-              $catName = $rowCat['category_name'];
-              $is_checked = $row['category_id'] === $catId ? 'selected' : '';
+              $catId = escapeIn($rowCat['ID']);
+              $catName = escapeIn($rowCat['category_name']);
+              $is_checked = escapeIn($row['category_id']) === $catId ? 'selected' : '';
               echo "<option class='post__category' value='$catId' $is_checked>$catName</option>";
             }
           ?>

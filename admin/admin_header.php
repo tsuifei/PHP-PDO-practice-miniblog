@@ -29,19 +29,4 @@
       </ul>
     </nav>
 
-    <!-- <nav class="mobile-menu">
-  <label for="show-menu" class="show-menu"><span>Menu</span>
-    <div class="lines"></div>
-  </label>
-  <input type="checkbox" id="show-menu">
-  <ul id="menu">
-    <li><a href="#">Home</a></li>
-    <li> <a href="#">About</a> </li>
-    <li> <a href="#">Portfolio</a> </li>
-    <li><a href="#">News</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav> -->
-
-
 </header>
