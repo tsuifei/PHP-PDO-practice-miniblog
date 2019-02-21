@@ -25,21 +25,21 @@
 
       foreach($results as $row){
         // 撈出內容轉成吃 Markdown 格式
-        $post_content = escapeOut($row['post_content']);
+        $post_content = $row['post_content'];
         $md = new Parsedown();
         $md->setSafeMode(true); 
         $post_content = $md->text($post_content); // 把內文轉成 markdown 格式
 
         //將查詢出的資料輸出
         echo "<div class='post'>";
-          echo "<h2 class='post__title'>" . escapeOut($row['post_title'])."</h2>";
+          echo "<h2 class='post__title'>" . $row['post_title']."</h2>";
           echo "<p class=''>" . $post_content ."</p>";
-          echo "<p class='post__category'>" . escapeOut($row['category_name'])."</p>";
-          echo "<p class='post__status'>" . escapeOut($row['post_status'])."</p>";
-          echo "<p class='post__date'>" . escapeOut($row['created_at'])."</p>";
+          echo "<p class='post__category'>" . $row['category_name']."</p>";
+          echo "<p class='post__status'>" . $row['post_status']."</p>";
+          echo "<p class='post__date'>" . $row['created_at']."</p>";
           echo "<div class='post__foot'>";
-            echo  "<a href='./post_update.php?id=". escapeOut($row['ID']) ."' class='bnt'>Update  </a>";
-            echo  "<a href='./post_delete.php?id=". escapeOut($row['ID']) ."' class='bnt'>Delete</a>";
+            echo  "<a href='./post_update.php?id=". $row['ID'] ."' class='bnt'>Update  </a>";
+            echo  "<a href='./post_delete.php?id=". $row['ID'] ."' class='bnt'>Delete</a>";
           echo "</div>";
         echo "</div>";
       }
